@@ -1,0 +1,206 @@
+/*---------- ページ全体の指定 ----------*/
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif, "ＭＳ ゴシック","Hiragino KaKu Gothic Pro", Osaka;
+	margin: 2%;
+	padding: 2%;
+	font-size: 12px;
+	color: #333;
+	background-color: #ffffff;
+	counter-reset: img_counter table_counter;
+}
+a:link {
+	color: #004080;
+	font-size: 12px;
+}
+a:visited {
+	color: #004080;
+	font-size: 12px;
+}
+p {
+	margin: 20px 0 20px 0;
+	line-height: 150%;
+	letter-spacing: 1px;
+}
+h1 {
+	font-size: 14px;
+	margin: 0;
+	padding: 2px 3px 0px 3px;
+	color: #333;
+}
+hr {
+	width: 100%;
+	height: 2px;
+}
+
+/*---- 標準のtable ----*/
+table.table010 {
+	margin-top: 0.2em;
+	margin-bottom: 1em;
+	width: 90%;
+	border-collapse: collapse;
+	border: solid 1px #999;
+	font-size: 100%;
+}
+table.table010 th,
+table.table010 td {
+	border: solid 1px #999;
+	padding: 4px 6px;
+}
+table.table010 th {
+	background: #E6E6E6;
+	text-align: center;
+	white-space: nowrap;
+	color: #666;
+}
+table.table010 td.title {
+	text-align: center;
+	font-size: 200%;
+	font-weight: bolder;
+}
+table.table010 td.dcu {
+	width:150px;
+}
+table.table010 td.dir {
+	width:260px;
+}
+
+
+
+/*---- 長文用タグ ----*/
+
+/* 自動改行用table */
+table.text {
+	width: 40em;
+}
+table.text > p {
+	text-indent: 1em;
+}
+/* 長文用list */
+ul.text,
+ol.text {
+	margin: 0.5em 0 2em 0;
+	letter-spacing: 1px;
+}
+ul.text > li,
+ol.text > li {
+	line-height: 120%;
+	margin: 0 0 0.5em 0;
+}
+/* 見出し付きlist */
+ul.description {
+	margin: 0.5em 0 2em 0;
+	padding: 0 0 0 1em;
+	letter-spacing: 1px;
+}
+ul.description > li {
+	margin: 0 0 0.5em 0;
+	list-style: none;
+	line-height: 150%;
+	letter-spacing: 1px;
+}
+ul.description > li > h1 {
+	font-weight: bold;
+	font-size: 12px;
+	margin: 0 0 0.5em -1em;
+}
+
+/*---- 表番号の割り当て ----*/
+table caption {
+	margin-top: 1em;
+	text-align: top;
+	text-decoration: underline;
+	counter-increment: table_counter;
+}
+table caption:before {
+	text-decoration: underline;
+	content: "表" counter(table_counter) " ";
+}
+
+
+
+/*---- 図番号の割り当て ----*/
+table.image td {
+	text-align: center;
+}
+table.image td[title]:after {
+	display: block;
+	margin: 0 1em 1em 1em;
+	text-decoration: underline;
+	text-align: center;
+	content: "図" counter(img_counter) " " attr(title);
+}
+table.image img { 
+	margin: 0 1em 0 1em;
+	height: 150px; 
+	counter-increment: img_counter;
+}
+table.image.big img     { height: 300px; }
+table.image.Big img     { height: 500px; }
+table.image.small img   { height:  75px; }
+table.image.natural img { height:  90%; }
+
+/*---- 章番号の割り当て ----*/
+
+/* インデント */
+ol.chapter ,
+ol.section ,
+ol.subsection ,
+ol.subsubsection { padding: 0 0 0 1em; }
+
+/* 見出しの基本設定 */
+ol.chapter > li > h1,
+ol.section > li > h1,
+ol.subsection > li > h1,
+ol.subsubsection > li > h1 {
+	font-weight: bold;
+	text-indent: -1em;
+}
+/* 見出しのサイズ */
+ol.chapter > li > h1       { font-size: 20px; }
+ol.section > li > h1       { font-size: 16px; }
+ol.subsection > li > h1    { font-size: 14px; }
+ol.subsubsection > li > h1 { font-size: 14px; }
+/* 見出しの余白 */
+ol.chapter > li > h1       { margin: 40px 0px 5px 0px; }
+ol.section > li > h1       { margin: 30px 0px 5px 0px; }
+ol.subsection > li > h1    { margin: 20px 0px 5px 0px; }
+ol.subsubsection > li > h1 { margin: 10px 0px 5px 0px; }
+
+/* 標準の番号の非表示 */
+ol.chapter > li,
+ol.section > li,
+ol.subsection > li,
+ol.subsubsection > li { list-style: none; }
+/* 章番号のリセット */
+ol.chapter       { counter-reset: chapter; }
+ol.section       { counter-reset: section; }
+ol.subsection    { counter-reset: subsection; }
+ol.subsubsection { counter-reset: subsubsection; }
+/* 章番号の更新 */
+ol.chapter > li > h1       { counter-increment: chapter; }
+ol.section > li > h1       { counter-increment: section; }
+ol.subsection > li > h1    { counter-increment: subsection; }
+ol.subsubsection > li > h1 { counter-increment: subsubsection; }
+/* 章番号の書式設定 */
+ol.chapter > li > h1:before {
+	content: 
+	counter(chapter) ". ";
+}
+ol.section > li > h1:before {
+	content: 
+	counter(chapter) "."
+	counter(section) ". ";
+}
+ol.subsection > li > h1:before {
+	content: 
+	counter(chapter) "."
+	counter(section) "."
+	counter(subsection) ". ";
+}
+ol.subsubsection > li > h1:before {
+	content: 
+	counter(chapter) "."
+	counter(section) "."
+	counter(subsection) "."
+	counter(subsubsection) ". ";
+}
