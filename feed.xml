@@ -1,50 +1,103 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-08-10T09:36:33+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">そらのサイト</title><subtitle>Robocup Junior Light Weightに参加中のそらのホームページです！</subtitle><entry><title type="html">JLCPCBとの契約</title><link href="http://localhost:4000/jlcpcb/2023/08/09/JLCPCB.html" rel="alternate" type="text/html" title="JLCPCBとの契約" /><published>2023-08-09T00:00:00+09:00</published><updated>2023-08-09T00:00:00+09:00</updated><id>http://localhost:4000/jlcpcb/2023/08/09/JLCPCB</id><content type="html" xml:base="http://localhost:4000/jlcpcb/2023/08/09/JLCPCB.html"><![CDATA[<p>こんにちは。ブログも久しぶりですね。</p>
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>そらのサイト</title>
+    <description>そらのサイト</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 10 Aug 2023 21:04:48 +0900</pubDate>
+    <lastBuildDate>Thu, 10 Aug 2023 21:04:48 +0900</lastBuildDate>
+    <generator>Jekyll v4.3.2</generator>
+    
+      <item>
+        <title>JLCPCBとの契約</title>
+        <description>&lt;p&gt;こんにちは。ブログも久しぶりですね。&lt;/p&gt;
 
-<p>バグがありまして… URLも使えなくなっていた状況でした。何が起こっているかというのは別の記事で紹介するとして、今回は私の所属しているSTとJLCPCBさんについて話していきたいと思います。</p>
+&lt;p&gt;バグがありまして… URLも使えなくなっていた状況でした。何が起こっているかというのは別の記事で紹介するとして、今回は私の所属しているSTとJLCPCBさんについて話していきたいと思います。&lt;/p&gt;
 
-<p><a href="https://JLCPCB.com/JPV?from=sora81dev">JLCPCB (公式) ホームページ</a></p>
+&lt;p&gt;&lt;a href=&quot;https://JLCPCB.com/JPV?from=sora81dev&quot;&gt;JLCPCB (公式) ホームページ&lt;/a&gt;&lt;/p&gt;
 
-<p>↑$54クーポンが無料でもらえますので是非</p>
+&lt;p&gt;↑$54クーポンが無料でもらえますので是非&lt;/p&gt;
 
-<h2 id="どうやってそもそも契約したのか">どうやってそもそも契約したのか</h2>
+&lt;h2 id=&quot;どうやってそもそも契約したのか&quot;&gt;どうやってそもそも契約したのか&lt;/h2&gt;
 
-<p><strong>極稀に</strong>DMでどうやってスポンサー契約したの？とか聞かれたりもします</p>
-<blockquote>
-  <p>本当にごくまれにです。
-いままでで3回ぐらいです</p>
-</blockquote>
+&lt;p&gt;&lt;strong&gt;極稀に&lt;/strong&gt;DMでどうやってスポンサー契約したの？とか聞かれたりもします&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;本当にごくまれにです。
+いままでで3回ぐらいです&lt;/p&gt;
+&lt;/blockquote&gt;
 
-<p>簡単に言うと、TwitterのDMでJLCPCB公式さんに送りました。</p>
+&lt;p&gt;簡単に言うと、TwitterのDMでJLCPCB公式さんに送りました。&lt;/p&gt;
 
-<p><a href="https://twitter.com/jlcpcb_japan">JLCPCB (公式) Twitter</a></p>
+&lt;p&gt;&lt;a href=&quot;https://twitter.com/jlcpcb_japan&quot;&gt;JLCPCB (公式) Twitter&lt;/a&gt;&lt;/p&gt;
 
-<p>どんな内容を送ったのかは教えてはいけない気がするので教えませんが、どんな構成だったのかはお伝えしておきます。</p>
-<blockquote>
-  <p>正直言って参考になりません。ご自身で考えて記入することをお勧めいたします。</p>
-</blockquote>
+&lt;p&gt;どんな内容を送ったのかは教えてはいけない気がするので教えませんが、どんな構成だったのかはお伝えしておきます。&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;正直言って参考になりません。ご自身で考えて記入することをお勧めいたします。&lt;/p&gt;
+&lt;/blockquote&gt;
 
-<p>前半は、どのようなことをしているのか。それにおいて、どのような立場なのかを書きました。
-そして後半は、なぜ契約しようと思ったのかを書きます。正直ここが一番大切だと思ってます。</p>
+&lt;p&gt;前半は、どのようなことをしているのか。それにおいて、どのような立場なのかを書きました。
+そして後半は、なぜ契約しようと思ったのかを書きます。正直ここが一番大切だと思ってます。&lt;/p&gt;
 
-<p>以上になります。</p>
+&lt;p&gt;以上になります。&lt;/p&gt;
 
-<p>もう一度言いますが、<strong>ご自身</strong>で書くことをお勧めします。（じゃあなんでこれ書いたんだよ）</p>
+&lt;p&gt;もう一度言いますが、&lt;strong&gt;ご自身&lt;/strong&gt;で書くことをお勧めします。（じゃあなんでこれ書いたんだよ）&lt;/p&gt;
 
-<h2 id="最後に">最後に</h2>
-<p>ほんとに申し訳ございませんでした。正直放置してました。ごめんなさい。ネームサーバー代が…ということで、Netlifyで作り直しましたのでよろしくお願いします！</p>
+&lt;h2 id=&quot;最後に&quot;&gt;最後に&lt;/h2&gt;
+&lt;p&gt;ほんとに申し訳ございませんでした。正直放置してました。ごめんなさい。ネームサーバー代が…ということで、Netlifyで作り直しましたのでよろしくお願いします！&lt;/p&gt;
 
-<h2 id="次の記事">次の記事</h2>
-<p>つぎはJLCPCBとはどんな企業なのか。を詳しくお伝えしたいと思います。</p>]]></content><author><name></name></author><category term="JLCPCB" /><summary type="html"><![CDATA[こんにちは。ブログも久しぶりですね。]]></summary></entry><entry><title type="html">にゃんにゃんにゃんの日</title><link href="http://localhost:4000/nyanko/%E8%B6%A3%E5%91%B3/2023/02/22/%E3%81%AB%E3%82%83%E3%82%93%E3%81%AB%E3%82%83%E3%82%93%E3%81%AB%E3%82%83%E3%82%93%E3%81%AE%E6%97%A5.html" rel="alternate" type="text/html" title="にゃんにゃんにゃんの日" /><published>2023-02-22T22:53:00+09:00</published><updated>2023-02-22T22:53:00+09:00</updated><id>http://localhost:4000/nyanko/%E8%B6%A3%E5%91%B3/2023/02/22/%E3%81%AB%E3%82%83%E3%82%93%E3%81%AB%E3%82%83%E3%82%93%E3%81%AB%E3%82%83%E3%82%93%E3%81%AE%E6%97%A5</id><content type="html" xml:base="http://localhost:4000/nyanko/%E8%B6%A3%E5%91%B3/2023/02/22/%E3%81%AB%E3%82%83%E3%82%93%E3%81%AB%E3%82%83%E3%82%93%E3%81%AB%E3%82%83%E3%82%93%E3%81%AE%E6%97%A5.html"><![CDATA[<h1 id="まずはどうぞ">まずはどうぞ</h1>
-<div style="position:relative;width:fit-content;height:fit-content;">
-            <a style="position:absolute;top:20px;right:1rem;opacity:0.8;" href="https://clipchamp.com/watch/yQQPhXrKZNs?utm_source=embed&amp;utm_medium=embed&amp;utm_campaign=watch">
-                <img style="height:22px;" src="https://clipchamp.com/e.svg" alt="Made with Clipchamp" />
-            </a>
-            <iframe allow="autoplay;" allowfullscreen="" style="border:none" src="https://clipchamp.com/watch/yQQPhXrKZNs/embed" width="640" height="360"></iframe>
-        </div>
+&lt;h2 id=&quot;次の記事&quot;&gt;次の記事&lt;/h2&gt;
+&lt;p&gt;つぎはJLCPCBとはどんな企業なのか。を詳しくお伝えしたいと思います。&lt;/p&gt;
+</description>
+        <pubDate>Wed, 09 Aug 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/JLCPCB/</link>
+        <guid isPermaLink="true">http://localhost:4000/JLCPCB/</guid>
+        
+        
+        <category>JLCPCB</category>
+        
+      </item>
+    
+      <item>
+        <title>にゃんにゃんにゃんの日</title>
+        <description>&lt;h1 id=&quot;まずはどうぞ&quot;&gt;まずはどうぞ&lt;/h1&gt;
+&lt;div style=&quot;position:relative;width:fit-content;height:fit-content;&quot;&gt;
+            &lt;a style=&quot;position:absolute;top:20px;right:1rem;opacity:0.8;&quot; href=&quot;https://clipchamp.com/watch/yQQPhXrKZNs?utm_source=embed&amp;amp;utm_medium=embed&amp;amp;utm_campaign=watch&quot;&gt;
+                &lt;img style=&quot;height:22px;&quot; src=&quot;https://clipchamp.com/e.svg&quot; alt=&quot;Made with Clipchamp&quot; /&gt;
+            &lt;/a&gt;
+            &lt;iframe allow=&quot;autoplay;&quot; allowfullscreen=&quot;&quot; style=&quot;border:none&quot; src=&quot;https://clipchamp.com/watch/yQQPhXrKZNs/embed&quot; width=&quot;640&quot; height=&quot;360&quot;&gt;&lt;/iframe&gt;
+        &lt;/div&gt;
 
-<p>#　奇跡的に取れました。
+&lt;p&gt;#　奇跡的に取れました。
 ちょうどパソコン開いたら22:21ふんで、いそいで収録して編集しました。
 ちなみに編集ソフトはClipchampです。
-<a href="https://digital.onl.jp">時計</a></p>
-<h1 id="まとめ">まとめ</h1>
-<p>またらいねんもとりたいな。</p>]]></content><author><name></name></author><category term="Nyanko" /><category term="趣味" /><summary type="html"><![CDATA[まずはどうぞ]]></summary></entry><entry><title type="html">サイトをJekyllに移動しました。</title><link href="http://localhost:4000/newsites/2023/01/29/%E3%83%96%E3%83%AD%E3%82%B0%E7%A7%BB%E8%A1%8C%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F.html" rel="alternate" type="text/html" title="サイトをJekyllに移動しました。" /><published>2023-01-29T10:36:00+09:00</published><updated>2023-01-29T10:36:00+09:00</updated><id>http://localhost:4000/newsites/2023/01/29/%E3%83%96%E3%83%AD%E3%82%B0%E7%A7%BB%E8%A1%8C%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F!</id><content type="html" xml:base="http://localhost:4000/newsites/2023/01/29/%E3%83%96%E3%83%AD%E3%82%B0%E7%A7%BB%E8%A1%8C%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F.html"><![CDATA[<p>新しいサイトに移動しました！</p>]]></content><author><name></name></author><category term="NewSites" /><summary type="html"><![CDATA[新しいサイトに移動しました！]]></summary></entry></feed>
+&lt;a href=&quot;https://digital.onl.jp&quot;&gt;時計&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;まとめ&quot;&gt;まとめ&lt;/h1&gt;
+&lt;p&gt;またらいねんもとりたいな。&lt;/p&gt;
+</description>
+        <pubDate>Wed, 22 Feb 2023 22:53:00 +0900</pubDate>
+        <link>http://localhost:4000/%E3%81%AB%E3%82%83%E3%82%93%E3%81%AB%E3%82%83%E3%82%93%E3%81%AB%E3%82%83%E3%82%93%E3%81%AE%E6%97%A5/</link>
+        <guid isPermaLink="true">http://localhost:4000/%E3%81%AB%E3%82%83%E3%82%93%E3%81%AB%E3%82%83%E3%82%93%E3%81%AB%E3%82%83%E3%82%93%E3%81%AE%E6%97%A5/</guid>
+        
+        
+        <category>Nyanko</category>
+        
+        <category>趣味</category>
+        
+      </item>
+    
+      <item>
+        <title>サイトをJekyllに移動しました。</title>
+        <description>&lt;p&gt;新しいサイトに移動しました！&lt;/p&gt;
+</description>
+        <pubDate>Sun, 29 Jan 2023 10:36:00 +0900</pubDate>
+        <link>http://localhost:4000/%E3%83%96%E3%83%AD%E3%82%B0%E7%A7%BB%E8%A1%8C%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F/</link>
+        <guid isPermaLink="true">http://localhost:4000/%E3%83%96%E3%83%AD%E3%82%B0%E7%A7%BB%E8%A1%8C%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F/</guid>
+        
+        
+        <category>NewSites</category>
+        
+      </item>
+    
+  </channel>
+</rss>
