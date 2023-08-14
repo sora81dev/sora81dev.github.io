@@ -1,0 +1,263 @@
+@@ -1,262 +0,0 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<!-- saved from url=(0040)https://sora81dev.github.io/tes3/02.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<meta http-equiv="Content-Type" content="text/html">   
+<title>MIRS1301-ELEC-0006 モーター制御ボード/モーター駆動ボード詳細設計書</title>
+<link rel="stylesheet" href="style1301.css" type="text/css"> 
+
+</head><body>
+
+<a name="0" class="docs-creator"></a>
+<table class="table010"><tbody><tr>
+	<th>名称</th>
+	<td class="title">MIRS1301 モーター制御ボード/モーター駆動ボード詳細設計書</td>
+</tr><tr>
+	<th>番号</th>
+	<td class="title">MIRS1301-ELEC-0005</td>
+</tr></tbody></table>
+
+
+<p>最終更新日:2013.1.31</p>
+
+
+<!--版数・最終更新日・作成者・承認者等を記す表（削除不可・適宜変更すること）-->
+<table class="table010"><tbody><tr>
+	<th>版数
+	</th><th>最終更新日
+	</th><th>作成
+	</th><th>承認
+	</th><th>改訂記事
+</th></tr><tr>
+	<td>A01
+	</td><td>2013.12.17
+	</td><td>岩田大輝, 高原一真
+	</td><td>
+	</td><td>初版
+</td></tr><tr>
+	<td>A02
+	</td><td>2014.1.31
+	</td><td>高原一真
+	</td><td>青木先生
+	</td><td>ソフトウェア関連
+</td></tr></tbody></table>
+
+<hr>
+
+<h1>目次</h1>
+<ol>
+<li><a href="https://sora81dev.github.io/tes3/02.html#1" class="docs-creator">はじめに</a>
+</li><li><a href="https://sora81dev.github.io/tes3/02.html#2" class="docs-creator">変更点概要</a>
+</li><li><a href="https://sora81dev.github.io/tes3/02.html#3" class="docs-creator">仕様詳細</a>
+</li><li><a href="https://sora81dev.github.io/tes3/02.html#4" class="docs-creator">作成方法</a>
+</li><li><a href="https://sora81dev.github.io/tes3/02.html#5" class="docs-creator">テスト方法</a>
+</li><li><a href="https://sora81dev.github.io/tes3/02.html#6" class="docs-creator">判明している問題点と解決案</a>
+</li></ol>
+
+<hr>
+
+<ol class="chapter">
+<li><h1><a name="1" class="docs-creator">はじめに</a></h1><p>
+	本ドキュメントは、MIRS1301の新モーター制御ボードおよびモーター駆動ボードの詳細設計書である。<br>
+</p></li><li><h1><a name="2" class="docs-creator">変更点概要</a></h1><p>
+	</p><ul class="description">
+	<li><h1>I2Cインターフェース搭載</h1>
+		MIRS1301の通信革命のため、モーター制御ボードにもI2Cインターフェースを搭載させる。
+	</li><li><h1>小型化</h1>
+		従来のモーター制御ボードの欠点である基板の大きさを解消するために、<br>
+		ICや素子の必要性について見直して回路規模を縮小させる。<br>
+	</li><li><h1>分割</h1>
+		標準機のモーター制御ボードの故障箇所は、<br>
+		フォトカプラとモータードライバICがほとんどで、PICなどの制御系の故障頻度は低い。<br>
+		そこで故障頻度の高い駆動系部分をモーター駆動ボードとして独立させる。<br>
+		これにより「故障頻度の高い基板ほど整備しやすい場所に置く」ことができるようになる。<br>
+		<br>
+		また、制御と駆動では必要となる知識が大きく異なり、一度に変更する機会はあまり無い。<br>
+		基板を分割することで、片方の知識しか無い学生でも個別に改良可能になる。<br>
+	</li><li><h1>2逓倍</h1>
+		標準のモーター制御ボードは、
+		ロータリーエンコーダーからの信号(A,B)のうち、Aの立ち上がりしか使用していない。<br>
+		今回は、Aの立ち下がりも使用することでエンコーダーの分解能を上昇させる。<br>
+	</li><li><h1>制御方式</h1>
+		従来のモーター制御ボードの欠点として、モーター始動時の応答時間が長いことが挙げられる。<br>
+		この遅延時間はモーターごとに異なり、走行開始時の誤差が無視できない。<br>
+		これは始動時と始動後で、モーターの特性が大きく異なるためである。<br>
+		そこで、今回は始動時にオフセット値を追加することで応答時間を短縮する。(具体的な内容は後述する。)<br>
+	</li></ul>
+</li><li><h1><a name="3" class="docs-creator">仕様詳細</a></h1><p>
+</p><ol class="section">
+	<li><h1>回路図</h1><p>
+		回路図を以下に示し、回路面での変更点を説明する。
+		<table class="Big image"><tbody><tr>
+			<td title="モーター制御ボード 回路図"><a href="./img/MotorControlBoard/circuit.png" class="docs-creator"><img src="./img/MotorControlBoard/circuit.png"></a>
+		</td></tr><tr>
+		</td></tr></tbody></table></p><p>
+		まず<a href="http://www2.denshi.numazu-ct.ac.jp/mirsdoc2/mirsmg3d/mtcb/num0001a/num0001a.html" class="docs-creator">標準機のモーター制御ボード</a>
+		に存在していたトランジスタは不要と判断し廃止している。<br>
+		ロータリーエンコーダー E6A2-CWZ5C の <a href="https://sora81dev.github.io/tes3/E6A2.pdf" class="docs-creator">カタログ(PDF)</a>によると<br>
+		オープンコレクタ(30mAまで吸い込み可)で出力されるとあるためである。<br>
+		</p><p>
+		つぎに、回転方向検出用のフリップフロップ及びNANDゲートを廃止している。<br>
+		ロータリーエンコーダーからの信号の変化を毎回割り込み処理で検出すれば、<br>
+		PIC内の処理だけで回転方向の検出が可能なためである。<br>
+		</p><p>
+		最後に、モータードライバ:MP4212周辺の回路を変更してフォトカプラを従来の4つから2つに減らしている。<br>
+		この部分の回路は以下の2つのサイトで紹介されているものの簡略版である。<br>
+		<a href="http://www.maizuru-ct.ac.jp/control/machida/elec/motor/index.htm" class="docs-creator">舞鶴工業高等専門学校 電子制御工学科 町田秀和研究室 | 各種DCモータドライバ回路集</a><br>
+		<a href="http://keitetsu.ninja-web.net/circuit_md_fet_pn.html" class="docs-creator">渓鉄 - KeitetsuWorks|Nch MOS FETとPch MOS FETで構成するモータドライバ</a><br>
+		具体的には、Pch-MOSとNch-MOSでCMOSを作り、入力の信号線を2本に減らしている。<br>
+		C-MOS構造であるため、モーターは常に正転・逆転・ブレーキの状態であり、フリー状態にならない。<br>
+		</p><p>
+		制御ボードと駆動ボードを接続するためのコネクタには、現在使用していないGNDピンが存在する。<br>
+		この理由は、今後モーター駆動ボードのみを改良しフォトカプラが変更された場合に、<br>
+		GNDピンが必要になる可能性があるためである。<br>
+	</p></li><li><h1>制御方式</h1><p>
+		モーター始動時にオフセットを予め加えておくことで、始動時の応答時間を減少させる。<br>
+		また標準機のPI制御にD制御を加えることと、<br>
+		制御周期を従来の100msecから10msecまで短くすることで、<br>
+		モーター始動直後の急激な速度変化に対する即応性を上げる。<br>
+		また速度の計算に重み付け無しの移動平均法を使用することで、処理時間を抑えつつ1msecごとの速度計算を実現させる。<br>
+		<br>
+		ロータリーエンコーダーとの通信不良時などを考慮して、<br>
+		出力を直接指定可能なモードも実装する。<br>
+	</p></li><li><h1>通信プロトコル</h1><p>
+		コマンドバイトと引数バイト列を送信したあと、戻値バイト列を受信する。<br>
+		多バイトデータのエンディアンは全てビッグエンディアンである。<br>
+		コマンドのリストを以下に列挙する。
+		<table class="table010"><tbody><tr></tr></tbody><caption>通信プロトコル</caption>
+			<tbody><tr><th>機能</th><th>コマンド</th><th>引数</th><th>戻値
+		</th></tr><tr>
+			<td>ハードウェアリセット
+			</td><td>0x00
+			</td><td>無し
+			</td><td>無し
+		</td></tr><tr>
+			<td>ソフトウェアリセット
+			</td><td>0x01
+			</td><td>無し
+			</td><td>無し
+		</td></tr><tr>
+			<td>エコーバック
+			</td><td>'e'
+			</td><td>任意(1Byte)
+			</td><td>'e', 引数(1Byte)
+		</td></tr><tr>
+			<td>モーターデータ取得
+			</td><td>0x80
+			</td><td>無し
+			</td><td>
+				経過時間 [msec]      (4Byte)<br>
+				回転角   [pulse]     (4Byte)<br>
+				角速度   [pulse/sec] (2Byte)<br>
+				Duty比   [1/1023]    (2Byte)<br>
+		</td></tr><tr>
+			<td>回転角初期化
+			</td><td>0x81
+			</td><td>回転角 [pulse] (4Byte)
+			</td><td>無し
+		</td></tr><tr>
+			<td>PID制御データ取得
+			</td><td>0x82
+			</td><td>無し
+			</td><td>
+				制御周期   [msec]               (1Byte)<br>
+				比例ゲイン [1/1023 * sec/pulse] (2Byte)<br>
+				積分ゲイン [1/pulse]            (2Byte)<br>
+				微分ゲイン [sec^2/pulse]        (2Byte)<br>
+				目標角速度 [pulse/sec]          (2Byte)<br>
+				偏差       [pulse/sec]          (4Byte)<br>
+				積分項     [pulse]              (4Byte)<br>
+				微分項     [pulse/msec^2]       (4Byte)<br>
+		</td></tr><tr>
+			<td>PID制御パラメータ設定
+			</td><td>0x83
+			</td><td>
+				制御周期   [msec]         (1Byte)<br>
+				比例ゲイン [sec/pulse]    (2Byte)<br>
+				積分ゲイン [1/pulse]      (2Byte)<br>
+				微分ゲイン [sec^2/pulse]  (2Byte)<br>
+			</td><td>無し
+		</td></tr><tr>
+			<td>Duty比直接設定
+			</td><td>0x90
+			</td><td>無し
+			</td><td>Duty比 [1/1023] (2Byte)
+		</td></tr><tr>
+			<td>目標角速度設定
+			</td><td>0x91
+			</td><td>無し
+			</td><td>目標角速度 [pulse/sec] (2Byte)
+		</td></tr></tbody></table>
+
+	</p></li></ol>
+</li><li><h1><a name="4" class="docs-creator">作成方法</a></h1><p>
+	</p><ol class="section">
+	<li><h1>基板加工機用 mit ファイル</h1><p>
+		</p><h4><a href="https://sora81dev.github.io/tes3/MotorControlBoard.mit" class="docs-creator">MotorControlBoard.mit</a></h4>
+		<h4><a href="https://sora81dev.github.io/tes3/MotorDriveBoard.mit" class="docs-creator">MotorDriveBoard.mit</a></h4>
+	</li><li><h1>パターン図と実装図</h1><p>
+		パターン図と実装図を以下に示す。<br>
+		<table class="natural image"><tbody><tr>
+			<td title="モーター制御ボード パターン図"><a href="./img/MotorControlBoard/pattern.png" class="docs-creator"><img src="./img/MotorControlBoard/pattern.png"></a>
+		</td></tr><tr>
+			<td title="モーター制御ボード 実装図"><a href="https://sora81dev.github.io/tes3/img/MotorControlBoard/face_sample.jpg" class="docs-creator"><img src="./img/MotorControlBoard/face_sample.jpg"></a>
+		</td></tr></tbody></table>
+	</p></li><li><h1>使用部品</h1><p>
+		作成に必要な部品を以下に示す。<br>
+		<table class="table010"><caption>モーター制御ボード部品表</caption>
+		<tbody><tr><th>記号</th><th>部品名</th><th>商品名</th><th>数量</th><th>備考
+		</th></tr><tr><td>IC1</td><td>PIC</td><td>PIC16F1938</td><td>1</td><td>モーター制御用
+		</td></tr><tr><td>R1~3</td><td>抵抗</td><td>1.2kΩ </td><td>3</td><td>LEDの電流制限用
+		</td></tr><tr><td>R4,5</td><td>抵抗</td><td>1.2kΩ </td><td>2</td><td>ロータリーエンコーダー用プルアップ抵抗
+		</td></tr><tr><td>C1,C2</td><td>セラミックコンデンサ</td><td>0.1uF</td><td>2</td><td>パスコン
+		</td></tr><tr><td>D1</td><td>LED</td><td>緑色LED</td><td>1</td><td>デバッグ用
+		</td></tr><tr><td>D2</td><td>LED</td><td>赤色LED</td><td>1</td><td>デバッグ用
+		</td></tr><tr><td>D3</td><td>LED</td><td>黄色LED</td><td>1</td><td>デバッグ用
+		</td></tr><tr><td>CN1</td><td>コネクタ</td><td>MOLEX 5pin</td><td>1</td><td>PICkitボード用
+		</td></tr><tr><td>CN2</td><td>コネクタ</td><td>MOLEX 4pin</td><td>1</td><td>I2Cバス用
+		</td></tr><tr><td>CN3</td><td>コネクタ</td><td>MOLEX 4pin</td><td>1</td><td>モーター駆動ボード用
+		</td></tr><tr><td>CN4</td><td>コネクタ</td><td>MOLEX 4pin</td><td>1</td><td>ロータリーエンコーダー用
+		</td></tr><tr><td>PIN1</td><td>ピンヘッダ</td><td>1pinヘッダ</td><td>1</td><td>デバッグ用GNDピン
+		</td></tr><tr><td>PIN2,3</td><td>ピンヘッダ</td><td>1pinヘッダ</td><td>2</td><td>デバッグ用PWM出力確認用
+		</td></tr></tbody></table>
+		<table class="table010"><caption>モーター駆動ボード部品表</caption>
+		<tbody><tr><th>記号</th><th>部品名</th><th>商品名</th><th>数量</th><th>備考
+		</th></tr><tr><td>R1,R2</td><td>抵抗</td><td>300Ω </td><td>2</td><td>電流制限用
+		</td></tr><tr><td>R3,R4</td><td>抵抗</td><td>150Ω </td><td>2</td><td>プルアップ抵抗
+		</td></tr><tr><td>R5~8</td><td>抵抗</td><td>10Ω </td><td>4</td><td>ダンパ抵抗
+		</td></tr><tr><td>C1,C2</td><td>セラミックコンデンサ</td><td>0.1uF</td><td>2</td><td>パスコン
+		</td></tr><tr><td>IC1,IC2</td><td>フォトカプラ</td><td>TLP552</td><td>2</td><td>絶縁用
+		</td></tr><tr><td>IC3</td><td>モータードライバ</td><td>MP4212</td><td>1</td><td>
+		</td></tr><tr><td>CN1</td><td>コネクタ</td><td>MOLEX 4pin</td><td>1</td><td>モーター制御ボード用
+		</td></tr><tr><td>J1</td><td>DCジャック</td><td>2.1mm径</td><td>1</td><td>電源用
+		</td></tr><tr><td>J2</td><td>DCジャック</td><td>2.1mm径</td><td>1</td><td>モーター用
+		</td></tr><tr><td>PIN1</td><td>ピンヘッダ</td><td>1pinヘッダ</td><td>1</td><td>デバッグ用GNDピン
+		</td></tr><tr><td>PIN2,3</td><td>ピンヘッダ</td><td>1pinヘッダ</td><td>2</td><td>フォトカプラ動作確認用
+		</td></tr><tr><td>PIN4,5</td><td>ピンヘッダ</td><td>1pinヘッダ</td><td>2</td><td>モータードライバ動作確認用
+		</td></tr></tbody></table>
+	</p></li><li><h1>プログラム</h1><p>
+		<a href="https://sora81dev.github.io/elec/num0001a/index.html" class="docs-creator">MIRS1301 エレクトロニクス詳細設計書</a>からダウンロードできる。
+	</p></li></ol>
+</li><li><h1><a name="5" class="docs-creator">テスト方法</a></h1><p>
+	<a href="https://sora81dev.github.io/soft/num0001a/index.html" class="docs-creator">MIRS1301 ソフトウェア詳細設計書</a>からダウンロードできるファイルに、テストプログラムが含まれている。
+</p></li><li><h1><a name="6" class="docs-creator">判明している問題点と解決案</a></h1><p>
+	今回はロータリーエンコーダーからの信号(A,B)のうち、Aの立ち上がり/立ち下がりエッジしかカウントしていない。<br>
+	Bの立ち上がり/立ち下がりエッジもカウントすることで分解能をさらに上げることができる。<br>
+	</p><p>
+	モーター駆動ボードにフリー状態が存在しないことによる問題は特に確認されなかった。<br>
+</p></li></ol>
+
+<p align="right"><a href="https://sora81dev.github.io/tes3/02.html#0" class="docs-creator">▲上へ</a></p>
+
+
+<hr>
+<p align="right"><a href="https://sora81dev.github.io/index.html" class="docs-creator">MIRS1301 ドキュメント管理台帳へ</a></p>
+<address>
+  <a href="http://www.denshi.numazu-ct.ac.jp/welcome.html" target="_blank" class="docs-creator">沼津工業高等専門学校　電子制御工学科</a>
+</address>
+
+
+
+<deepl-input-controller><template shadowrootmode="open"><link rel="stylesheet" href="chrome-extension://cofdbpoegempjloogbagkncekinflcnj/build/content.css"><div><div class="dl-input-translation-container svelte-ju4595"><div></div></div></div></template></deepl-input-controller></body></html>
