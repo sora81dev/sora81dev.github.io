@@ -3,10 +3,10 @@
   <channel>
     <title>そらのサイト</title>
     <description>そらのサイト</description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 14 Aug 2023 16:00:36 +0900</pubDate>
-    <lastBuildDate>Mon, 14 Aug 2023 16:00:36 +0900</lastBuildDate>
+    <link>/</link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 14 Aug 2023 19:00:26 +0900</pubDate>
+    <lastBuildDate>Mon, 14 Aug 2023 19:00:26 +0900</lastBuildDate>
     <generator>Jekyll v4.3.2</generator>
     
       <item>
@@ -59,7 +59,7 @@
 &lt;p&gt;ほんで、作成したところは、いつもおなじみのJLCPCBさんです。&lt;/p&gt;
 
 &lt;p&gt;↓ JLCPCBさんのサイトはこちらから&lt;br /&gt;
-&lt;a href=&quot;https://jlcpcb.ccom/JPV&quot;&gt;JLCPCB公式サイト(日本語)&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;https://jlcpcb.com/JPV&quot;&gt;JLCPCB公式サイト(日本語)&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;ちなみにこの基板 + USB-Cでプログラム書き込めるやつ　の二つを発注しましたが、最速便でまさかの&lt;strong&gt;3日&lt;/strong&gt;で届きました。
 嘘じゃないですよ。ほんとです。正直めちゃくちゃ驚きました。&lt;/p&gt;
@@ -89,8 +89,8 @@ Blendのいぬわしくんを実際に高専Open Canvasのときに見てきま�
 &lt;p&gt;また次の時まで。じゃあね👋&lt;/p&gt;
 </description>
         <pubDate>Sun, 13 Aug 2023 17:49:00 +0900</pubDate>
-        <link>http://localhost:4000/%E3%83%9C%E3%83%BC%E3%83%AB%E3%82%BB%E3%83%B3%E3%82%B5%E3%83%BC%E5%9F%BA%E7%9B%A4/</link>
-        <guid isPermaLink="true">http://localhost:4000/%E3%83%9C%E3%83%BC%E3%83%AB%E3%82%BB%E3%83%B3%E3%82%B5%E3%83%BC%E5%9F%BA%E7%9B%A4/</guid>
+        <link>/%E3%83%9C%E3%83%BC%E3%83%AB%E3%82%BB%E3%83%B3%E3%82%B5%E3%83%BC%E5%9F%BA%E7%9B%A4/</link>
+        <guid isPermaLink="true">/%E3%83%9C%E3%83%BC%E3%83%AB%E3%82%BB%E3%83%B3%E3%82%B5%E3%83%BC%E5%9F%BA%E7%9B%A4/</guid>
         
         
         <category>基盤</category>
@@ -138,8 +138,8 @@ Blendのいぬわしくんを実際に高専Open Canvasのときに見てきま�
 &lt;p&gt;つぎはJLCPCBとはどんな企業なのか。を詳しくお伝えしたいと思います。&lt;/p&gt;
 </description>
         <pubDate>Wed, 09 Aug 2023 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/JLCPCB/</link>
-        <guid isPermaLink="true">http://localhost:4000/JLCPCB/</guid>
+        <link>/JLCPCB/</link>
+        <guid isPermaLink="true">/JLCPCB/</guid>
         
         
         <category>JLCPCB</category>
@@ -162,8 +162,8 @@ Blendのいぬわしくんを実際に高専Open Canvasのときに見てきま�
 &lt;p&gt;またらいねんもとりたいな。&lt;/p&gt;
 </description>
         <pubDate>Wed, 22 Feb 2023 22:53:00 +0900</pubDate>
-        <link>http://localhost:4000/%E3%81%AB%E3%82%83%E3%82%93%E3%81%AB%E3%82%83%E3%82%93%E3%81%AB%E3%82%83%E3%82%93%E3%81%AE%E6%97%A5/</link>
-        <guid isPermaLink="true">http://localhost:4000/%E3%81%AB%E3%82%83%E3%82%93%E3%81%AB%E3%82%83%E3%82%93%E3%81%AB%E3%82%83%E3%82%93%E3%81%AE%E6%97%A5/</guid>
+        <link>/%E3%81%AB%E3%82%83%E3%82%93%E3%81%AB%E3%82%83%E3%82%93%E3%81%AB%E3%82%83%E3%82%93%E3%81%AE%E6%97%A5/</link>
+        <guid isPermaLink="true">/%E3%81%AB%E3%82%83%E3%82%93%E3%81%AB%E3%82%83%E3%82%93%E3%81%AB%E3%82%83%E3%82%93%E3%81%AE%E6%97%A5/</guid>
         
         
         <category>Nyanko</category>
@@ -177,8 +177,8 @@ Blendのいぬわしくんを実際に高専Open Canvasのときに見てきま�
         <description>&lt;p&gt;新しいサイトに移動しました！&lt;/p&gt;
 </description>
         <pubDate>Sun, 29 Jan 2023 10:36:00 +0900</pubDate>
-        <link>http://localhost:4000/%E3%83%96%E3%83%AD%E3%82%B0%E7%A7%BB%E8%A1%8C%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F/</link>
-        <guid isPermaLink="true">http://localhost:4000/%E3%83%96%E3%83%AD%E3%82%B0%E7%A7%BB%E8%A1%8C%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F/</guid>
+        <link>/%E3%83%96%E3%83%AD%E3%82%B0%E7%A7%BB%E8%A1%8C%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F/</link>
+        <guid isPermaLink="true">/%E3%83%96%E3%83%AD%E3%82%B0%E7%A7%BB%E8%A1%8C%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F/</guid>
         
         
         <category>NewSites</category>
